@@ -1,0 +1,98 @@
+[
+  {
+    "name": "slots-exhausted",
+    "seed": 11,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 4,
+    "script": ["slots-reserved", "slots-reserved", "slots-reserved", "slots-reserved"]
+  },
+  {
+    "name": "same-seed",
+    "seed": 11,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 4,
+    "script": ["too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients"]
+  },
+  {
+    "name": "recovers",
+    "seed": 23,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 5,
+    "script": ["too-many-clients", "terminating-connection", "ok"]
+  },
+  {
+    "name": "sql-abort",
+    "seed": 7,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 5,
+    "script": ["sql-syntax", "too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients"]
+  },
+  {
+    "name": "deadlock-abort",
+    "seed": 7,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 3,
+    "script": ["deadlock", "slots-reserved", "slots-reserved"]
+  },
+  {
+    "name": "refused",
+    "seed": 3,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 4,
+    "script": ["connection-refused", "too-many-clients", "too-many-clients", "too-many-clients"]
+  },
+  {
+    "name": "auth-failed",
+    "seed": 3,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 4,
+    "script": ["auth-failed", "slots-reserved", "slots-reserved", "slots-reserved"]
+  },
+  {
+    "name": "terminating-exhausted",
+    "seed": 31,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 3,
+    "script": ["terminating-connection", "terminating-connection", "terminating-connection"]
+  },
+  {
+    "name": "cap-hammered",
+    "seed": 9,
+    "base_ms": 800,
+    "cap_ms": 1000,
+    "max_retries": 5,
+    "script": ["too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients"]
+  },
+  {
+    "name": "cap-boundary",
+    "seed": 5,
+    "base_ms": 1000,
+    "cap_ms": 1000,
+    "max_retries": 3,
+    "script": ["slots-reserved", "slots-reserved", "slots-reserved"]
+  },
+  {
+    "name": "long-ladder",
+    "seed": 42,
+    "base_ms": 2,
+    "cap_ms": 1000,
+    "max_retries": 8,
+    "script": ["too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients", "too-many-clients"]
+  },
+  {
+    "name": "zero-retries",
+    "seed": 5,
+    "base_ms": 200,
+    "cap_ms": 1000,
+    "max_retries": 0,
+    "script": ["ok"]
+  }
+]
